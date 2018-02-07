@@ -1,0 +1,29 @@
+{
+	"name": "germania-kg/nullfactory",
+	"description": "Factory callable that returns null or any other default value",
+
+	"license": "MIT",
+
+	"authors": [
+		{
+			"name": "Carsten Witt",
+			"email": "carstenwitt@germania-kg.de",
+			"role": "Developer"
+		}
+	],
+
+	"autoload": {
+		"psr-4": {
+			"Germania\\NullFactory\\": "src/"
+		}
+	},
+
+  "autoload-dev": {
+      "psr-4": { "tests\\": "tests/src" }
+  },
+
+	"require-dev": {
+		"satooshi/php-coveralls": "^1.0",
+		"phpunit/phpunit": "^5.7|^6.0"
+	}
+}
