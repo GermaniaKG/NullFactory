@@ -14,6 +14,7 @@ class NullFactory
 
     public function __construct( $default_return = null, LoggerInterface $logger = null )
     {
+        $this->default_return = $default_return;
         $this->setLogger( $logger ?: new NullLogger );
     }
 
