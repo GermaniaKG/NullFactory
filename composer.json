@@ -18,12 +18,20 @@
 		}
 	},
 
-  "autoload-dev": {
-      "psr-4": { "tests\\": "tests/src" }
-  },
+	"autoload-dev": {
+	  	"psr-4": { "tests\\": "tests/src" }
+	},
 
-	"require-dev": {
-		"satooshi/php-coveralls": "^1.0",
-		"phpunit/phpunit": "^5.7|^6.0"
-	}
+    "require-dev": {
+        "php-coveralls/php-coveralls": "^2.0",
+        "phpunit/phpunit": "^5.7|^6.0|^7.0"
+    },
+    
+    "scripts": {
+          "phpunit": "phpunit --colors=auto",
+  
+          "test": [
+              "@phpunit"
+          ]
+    }
 }
