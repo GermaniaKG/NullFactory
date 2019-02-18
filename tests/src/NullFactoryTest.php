@@ -7,10 +7,11 @@ use \InvalidArgumentException;
 class NullFactoryTest extends \PHPUnit\Framework\TestCase
 {
 
-
-    public function testSimple()
+    /**
+     * @dataProvider provideVariousDefaultReturns
+     */
+    public function testSimple( $default_return )
     {
-        $default_return = "foobar";
 
         $sut = new NullFactory( $default_return );
         $result = $sut("Anything else");
@@ -19,6 +20,19 @@ class NullFactoryTest extends \PHPUnit\Framework\TestCase
 
     }
 
+
+    public function provideVariousDefaultReturns()
+    {
+        return array(
+            [ "foobar" ],
+            [ 99 ],
+            [ array("foo", "bar")],
+            [ null ],
+            [ false ],
+            [ true ],
+            [ 0 ]
+        );
+    }
 
 }
 
