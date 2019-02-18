@@ -15,6 +15,43 @@
 $ composer require germania-kg/nullfactory
 ```
 
+## Usage
+
+```php
+<?php
+use Germania\NullFactory\NullFactory;
+
+$nf = new NullFactory;
+$result = $nf( "anything" );
+// null
+```
+
+To make *NullFactory* return **something else,** pass it to the constructor:
+
+```php
+<?php
+use Germania\NullFactory\NullFactory;
+
+$default_value = array("foo", "bar");
+
+$nf = new NullFactory( $default_value );
+$result = $nf( "anything" );
+// array("foo", "bar")
+```
+
+The *NullFactory* also accepts a PSR3-**Logger** which defaults to **NullLogger**
+
+```php
+<?php
+use Germania\NullFactory\NullFactory;
+use Psr\Log\NullLogger;
+
+$nf = new NullFactory( null, new NullLogger );
+$result = $nf( "anything" );
+
+```
+
+
 
 ## Issues
 
